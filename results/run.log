@@ -1,0 +1,1439 @@
+nohup: ignoring input
+
+==================================================================
+  RUN: r18_scratch_sgd_step
+  model=resnet18 pretrained=0 optimizer=sgd scheduler=step lr=0.1 epochs=30
+==================================================================
+[info] device: cuda
+[info] run_name: r18_scratch_sgd_step
+[info] args: {
+  "model": "resnet18",
+  "batch_size": 128,
+  "lr": 0.1,
+  "epochs": 30,
+  "optimizer": "sgd",
+  "scheduler": "step",
+  "pretrained": 0,
+  "save_csv": "results/results.csv",
+  "weight_decay": 0.0005,
+  "num_workers": 4,
+  "seed": 42,
+  "save_dir": "checkpoints",
+  "data_dir": "./data",
+  "run_name": "r18_scratch_sgd_step",
+  "val_size": 5000,
+  "log_dir": "results/logs",
+  "plot_dir": "results/plots"
+}
+[info] train batches: 351  val batches: 40  test batches: 79
+[info] trainable params: 11,227,812
+
+[epoch 1/30]
+/home/work/kds/AI_Assignment3/train.py:67: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /opt/pytorch/pytorch/aten/src/ATen/native/Scalar.cpp:22.)
+  loss_meter.update(loss.item(), images.size(0))
+    step 50/351  loss 4.4994  elapsed 4.4s
+    step 100/351  loss 4.2858  elapsed 7.7s
+    step 150/351  loss 4.1578  elapsed 11.1s
+    step 200/351  loss 4.0778  elapsed 14.4s
+    step 250/351  loss 4.0147  elapsed 17.8s
+    step 300/351  loss 3.9544  elapsed 21.2s
+    step 350/351  loss 3.8979  elapsed 24.4s
+    train_loss 3.8967  val_loss 3.4599  val_acc 16.28%  val_top5 43.12%  lr 0.10000  time 27.0s
+    [+] new best val_acc 16.28% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 2/30]
+    step 50/351  loss 3.4696  elapsed 3.9s
+    step 100/351  loss 3.4158  elapsed 9.5s
+    step 150/351  loss 3.3785  elapsed 15.8s
+    step 200/351  loss 3.3404  elapsed 22.4s
+    step 250/351  loss 3.2965  elapsed 29.0s
+    step 300/351  loss 3.2572  elapsed 35.6s
+    step 350/351  loss 3.2153  elapsed 42.3s
+    train_loss 3.2150  val_loss 3.0201  val_acc 24.44%  val_top5 55.24%  lr 0.10000  time 46.3s
+    [+] new best val_acc 24.44% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 3/30]
+    step 50/351  loss 2.8450  elapsed 6.1s
+    step 100/351  loss 2.8180  elapsed 11.7s
+    step 150/351  loss 2.7831  elapsed 18.4s
+    step 200/351  loss 2.7359  elapsed 24.9s
+    step 250/351  loss 2.7035  elapsed 31.4s
+    step 300/351  loss 2.6710  elapsed 38.0s
+    step 350/351  loss 2.6388  elapsed 44.5s
+    train_loss 2.6381  val_loss 2.5827  val_acc 33.90%  val_top5 66.64%  lr 0.10000  time 48.5s
+    [+] new best val_acc 33.90% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 4/30]
+    step 50/351  loss 2.3160  elapsed 5.7s
+    step 100/351  loss 2.3130  elapsed 11.2s
+    step 150/351  loss 2.3023  elapsed 17.9s
+    step 200/351  loss 2.2863  elapsed 24.1s
+    step 250/351  loss 2.2625  elapsed 30.4s
+    step 300/351  loss 2.2457  elapsed 36.8s
+    step 350/351  loss 2.2238  elapsed 42.0s
+    train_loss 2.2230  val_loss 2.2368  val_acc 40.84%  val_top5 72.06%  lr 0.10000  time 46.0s
+    [+] new best val_acc 40.84% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 5/30]
+    step 50/351  loss 1.9616  elapsed 5.4s
+    step 100/351  loss 1.9666  elapsed 10.4s
+    step 150/351  loss 1.9680  elapsed 15.8s
+    step 200/351  loss 1.9620  elapsed 21.3s
+    step 250/351  loss 1.9583  elapsed 26.8s
+    step 300/351  loss 1.9493  elapsed 32.3s
+    step 350/351  loss 1.9441  elapsed 37.8s
+    train_loss 1.9446  val_loss 2.0880  val_acc 44.30%  val_top5 76.12%  lr 0.10000  time 41.7s
+    [+] new best val_acc 44.30% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 6/30]
+    step 50/351  loss 1.7575  elapsed 5.3s
+    step 100/351  loss 1.7590  elapsed 10.0s
+    step 150/351  loss 1.7652  elapsed 15.5s
+    step 200/351  loss 1.7752  elapsed 20.9s
+    step 250/351  loss 1.7718  elapsed 26.4s
+    step 300/351  loss 1.7679  elapsed 31.8s
+    step 350/351  loss 1.7636  elapsed 37.1s
+    train_loss 1.7648  val_loss 1.9138  val_acc 49.56%  val_top5 79.14%  lr 0.10000  time 41.1s
+    [+] new best val_acc 49.56% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 7/30]
+    step 50/351  loss 1.5767  elapsed 5.4s
+    step 100/351  loss 1.5950  elapsed 10.0s
+    step 150/351  loss 1.6045  elapsed 15.5s
+    step 200/351  loss 1.6101  elapsed 20.8s
+    step 250/351  loss 1.6134  elapsed 26.1s
+    step 300/351  loss 1.6156  elapsed 31.5s
+    step 350/351  loss 1.6138  elapsed 36.9s
+    train_loss 1.6143  val_loss 1.8039  val_acc 51.22%  val_top5 81.12%  lr 0.10000  time 41.0s
+    [+] new best val_acc 51.22% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 8/30]
+    step 50/351  loss 1.5173  elapsed 5.5s
+    step 100/351  loss 1.5096  elapsed 10.2s
+    step 150/351  loss 1.5173  elapsed 15.5s
+    step 200/351  loss 1.5244  elapsed 21.1s
+    step 250/351  loss 1.5194  elapsed 26.5s
+    step 300/351  loss 1.5210  elapsed 32.1s
+    step 350/351  loss 1.5249  elapsed 37.3s
+    train_loss 1.5245  val_loss 1.6611  val_acc 54.58%  val_top5 83.72%  lr 0.10000  time 41.4s
+    [+] new best val_acc 54.58% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 9/30]
+    step 50/351  loss 1.3905  elapsed 5.5s
+    step 100/351  loss 1.4000  elapsed 9.7s
+    step 150/351  loss 1.4078  elapsed 15.4s
+    step 200/351  loss 1.4280  elapsed 21.1s
+    step 250/351  loss 1.4420  elapsed 26.4s
+    step 300/351  loss 1.4406  elapsed 31.7s
+    step 350/351  loss 1.4448  elapsed 37.1s
+    train_loss 1.4452  val_loss 1.8600  val_acc 50.80%  val_top5 81.34%  lr 0.10000  time 41.1s
+
+[epoch 10/30]
+    step 50/351  loss 1.3392  elapsed 6.0s
+    step 100/351  loss 1.3391  elapsed 10.6s
+    step 150/351  loss 1.3425  elapsed 16.1s
+    step 200/351  loss 1.3617  elapsed 21.4s
+    step 250/351  loss 1.3694  elapsed 27.0s
+    step 300/351  loss 1.3776  elapsed 32.4s
+    step 350/351  loss 1.3833  elapsed 37.6s
+    train_loss 1.3840  val_loss 1.6754  val_acc 54.00%  val_top5 84.32%  lr 0.01000  time 41.6s
+
+[epoch 11/30]
+    step 50/351  loss 1.1397  elapsed 5.8s
+    step 100/351  loss 1.0721  elapsed 10.5s
+    step 150/351  loss 1.0412  elapsed 16.2s
+    step 200/351  loss 1.0125  elapsed 21.5s
+    step 250/351  loss 0.9970  elapsed 27.1s
+    step 300/351  loss 0.9816  elapsed 32.4s
+    step 350/351  loss 0.9708  elapsed 37.8s
+    train_loss 0.9704  val_loss 1.0678  val_acc 69.22%  val_top5 92.22%  lr 0.01000  time 41.5s
+    [+] new best val_acc 69.22% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 12/30]
+    step 50/351  loss 0.8422  elapsed 5.6s
+    step 100/351  loss 0.8375  elapsed 10.3s
+    step 150/351  loss 0.8380  elapsed 15.8s
+    step 200/351  loss 0.8322  elapsed 21.0s
+    step 250/351  loss 0.8296  elapsed 26.5s
+    step 300/351  loss 0.8270  elapsed 31.9s
+    step 350/351  loss 0.8263  elapsed 37.4s
+    train_loss 0.8266  val_loss 1.0220  val_acc 70.72%  val_top5 92.54%  lr 0.01000  time 41.5s
+    [+] new best val_acc 70.72% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 13/30]
+    step 50/351  loss 0.7460  elapsed 5.7s
+    step 100/351  loss 0.7595  elapsed 10.6s
+    step 150/351  loss 0.7636  elapsed 16.1s
+    step 200/351  loss 0.7623  elapsed 21.3s
+    step 250/351  loss 0.7667  elapsed 27.0s
+    step 300/351  loss 0.7652  elapsed 32.4s
+    step 350/351  loss 0.7617  elapsed 37.8s
+    train_loss 0.7617  val_loss 0.9998  val_acc 70.98%  val_top5 92.84%  lr 0.01000  time 41.8s
+    [+] new best val_acc 70.98% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 14/30]
+    step 50/351  loss 0.7088  elapsed 5.4s
+    step 100/351  loss 0.7091  elapsed 10.5s
+    step 150/351  loss 0.7070  elapsed 16.0s
+    step 200/351  loss 0.7036  elapsed 21.6s
+    step 250/351  loss 0.7064  elapsed 27.0s
+    step 300/351  loss 0.7075  elapsed 32.3s
+    step 350/351  loss 0.7061  elapsed 37.9s
+    train_loss 0.7059  val_loss 1.0025  val_acc 71.58%  val_top5 92.98%  lr 0.01000  time 41.9s
+    [+] new best val_acc 71.58% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 15/30]
+    step 50/351  loss 0.6402  elapsed 5.3s
+    step 100/351  loss 0.6545  elapsed 10.4s
+    step 150/351  loss 0.6562  elapsed 15.6s
+    step 200/351  loss 0.6558  elapsed 20.8s
+    step 250/351  loss 0.6568  elapsed 26.3s
+    step 300/351  loss 0.6576  elapsed 31.9s
+    step 350/351  loss 0.6585  elapsed 37.4s
+    train_loss 0.6590  val_loss 0.9783  val_acc 71.92%  val_top5 92.88%  lr 0.01000  time 41.4s
+    [+] new best val_acc 71.92% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 16/30]
+    step 50/351  loss 0.6235  elapsed 5.6s
+    step 100/351  loss 0.6162  elapsed 10.6s
+    step 150/351  loss 0.6169  elapsed 15.9s
+    step 200/351  loss 0.6206  elapsed 21.2s
+    step 250/351  loss 0.6222  elapsed 27.0s
+    step 300/351  loss 0.6214  elapsed 32.5s
+    step 350/351  loss 0.6205  elapsed 37.8s
+    train_loss 0.6208  val_loss 0.9839  val_acc 71.92%  val_top5 92.98%  lr 0.01000  time 41.8s
+
+[epoch 17/30]
+    step 50/351  loss 0.5638  elapsed 5.8s
+    step 100/351  loss 0.5733  elapsed 10.5s
+    step 150/351  loss 0.5746  elapsed 15.8s
+    step 200/351  loss 0.5745  elapsed 21.2s
+    step 250/351  loss 0.5759  elapsed 26.6s
+    step 300/351  loss 0.5763  elapsed 32.4s
+    step 350/351  loss 0.5785  elapsed 38.0s
+    train_loss 0.5787  val_loss 0.9977  val_acc 71.80%  val_top5 92.56%  lr 0.01000  time 41.9s
+
+[epoch 18/30]
+    step 50/351  loss 0.5204  elapsed 5.5s
+    step 100/351  loss 0.5221  elapsed 10.7s
+    step 150/351  loss 0.5351  elapsed 16.3s
+    step 200/351  loss 0.5357  elapsed 21.9s
+    step 250/351  loss 0.5365  elapsed 27.3s
+    step 300/351  loss 0.5386  elapsed 33.2s
+    step 350/351  loss 0.5380  elapsed 38.7s
+    train_loss 0.5383  val_loss 0.9790  val_acc 71.92%  val_top5 92.84%  lr 0.01000  time 42.8s
+
+[epoch 19/30]
+    step 50/351  loss 0.4852  elapsed 5.2s
+    step 100/351  loss 0.4971  elapsed 10.2s
+    step 150/351  loss 0.4939  elapsed 15.5s
+    step 200/351  loss 0.4949  elapsed 21.0s
+    step 250/351  loss 0.5008  elapsed 26.3s
+    step 300/351  loss 0.5047  elapsed 32.0s
+    step 350/351  loss 0.5069  elapsed 37.2s
+    train_loss 0.5074  val_loss 0.9843  val_acc 71.96%  val_top5 92.98%  lr 0.01000  time 41.1s
+    [+] new best val_acc 71.96% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 20/30]
+    step 50/351  loss 0.4360  elapsed 5.6s
+    step 100/351  loss 0.4480  elapsed 10.6s
+    step 150/351  loss 0.4487  elapsed 16.0s
+    step 200/351  loss 0.4547  elapsed 21.5s
+    step 250/351  loss 0.4615  elapsed 26.8s
+    step 300/351  loss 0.4651  elapsed 32.2s
+    step 350/351  loss 0.4676  elapsed 37.8s
+    train_loss 0.4673  val_loss 0.9833  val_acc 72.14%  val_top5 92.84%  lr 0.00100  time 41.7s
+    [+] new best val_acc 72.14% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 21/30]
+    step 50/351  loss 0.4173  elapsed 5.4s
+    step 100/351  loss 0.4046  elapsed 10.1s
+    step 150/351  loss 0.3952  elapsed 15.7s
+    step 200/351  loss 0.3913  elapsed 21.0s
+    step 250/351  loss 0.3884  elapsed 26.3s
+    step 300/351  loss 0.3843  elapsed 31.6s
+    step 350/351  loss 0.3796  elapsed 37.1s
+    train_loss 0.3795  val_loss 0.9247  val_acc 73.78%  val_top5 93.30%  lr 0.00100  time 41.1s
+    [+] new best val_acc 73.78% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 22/30]
+    step 50/351  loss 0.3515  elapsed 5.4s
+    step 100/351  loss 0.3583  elapsed 10.9s
+    step 150/351  loss 0.3581  elapsed 16.2s
+    step 200/351  loss 0.3576  elapsed 21.8s
+    step 250/351  loss 0.3570  elapsed 27.1s
+    step 300/351  loss 0.3552  elapsed 32.7s
+    step 350/351  loss 0.3552  elapsed 38.3s
+    train_loss 0.3551  val_loss 0.9169  val_acc 73.92%  val_top5 93.38%  lr 0.00100  time 42.2s
+    [+] new best val_acc 73.92% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 23/30]
+    step 50/351  loss 0.3389  elapsed 5.4s
+    step 100/351  loss 0.3403  elapsed 10.5s
+    step 150/351  loss 0.3363  elapsed 15.9s
+    step 200/351  loss 0.3358  elapsed 21.3s
+    step 250/351  loss 0.3358  elapsed 26.7s
+    step 300/351  loss 0.3386  elapsed 32.2s
+    step 350/351  loss 0.3393  elapsed 37.6s
+    train_loss 0.3390  val_loss 0.9171  val_acc 74.14%  val_top5 93.44%  lr 0.00100  time 41.5s
+    [+] new best val_acc 74.14% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 24/30]
+    step 50/351  loss 0.3292  elapsed 5.8s
+    step 100/351  loss 0.3279  elapsed 10.6s
+    step 150/351  loss 0.3278  elapsed 16.1s
+    step 200/351  loss 0.3286  elapsed 21.4s
+    step 250/351  loss 0.3313  elapsed 26.8s
+    step 300/351  loss 0.3314  elapsed 32.3s
+    step 350/351  loss 0.3324  elapsed 37.6s
+    train_loss 0.3325  val_loss 0.9136  val_acc 73.78%  val_top5 93.54%  lr 0.00100  time 41.7s
+
+[epoch 25/30]
+    step 50/351  loss 0.3317  elapsed 5.7s
+    step 100/351  loss 0.3234  elapsed 10.4s
+    step 150/351  loss 0.3215  elapsed 15.8s
+    step 200/351  loss 0.3225  elapsed 21.3s
+    step 250/351  loss 0.3237  elapsed 26.8s
+    step 300/351  loss 0.3241  elapsed 32.2s
+    step 350/351  loss 0.3222  elapsed 37.2s
+    train_loss 0.3221  val_loss 0.9131  val_acc 74.14%  val_top5 93.52%  lr 0.00100  time 39.5s
+
+[epoch 26/30]
+    step 50/351  loss 0.3109  elapsed 3.3s
+    step 100/351  loss 0.3088  elapsed 6.1s
+    step 150/351  loss 0.3092  elapsed 8.9s
+    step 200/351  loss 0.3120  elapsed 11.8s
+    step 250/351  loss 0.3125  elapsed 14.7s
+    step 300/351  loss 0.3130  elapsed 17.5s
+    step 350/351  loss 0.3142  elapsed 20.2s
+    train_loss 0.3140  val_loss 0.9163  val_acc 74.08%  val_top5 93.48%  lr 0.00100  time 22.4s
+
+[epoch 27/30]
+    step 50/351  loss 0.3048  elapsed 3.2s
+    step 100/351  loss 0.3025  elapsed 5.9s
+    step 150/351  loss 0.3025  elapsed 8.6s
+    step 200/351  loss 0.3063  elapsed 11.3s
+    step 250/351  loss 0.3039  elapsed 13.9s
+    step 300/351  loss 0.3064  elapsed 16.7s
+    step 350/351  loss 0.3091  elapsed 19.5s
+    train_loss 0.3092  val_loss 0.9150  val_acc 74.28%  val_top5 93.54%  lr 0.00100  time 21.7s
+    [+] new best val_acc 74.28% -> saved checkpoints/r18_scratch_sgd_step_best.pth
+
+[epoch 28/30]
+    step 50/351  loss 0.2938  elapsed 3.1s
+    step 100/351  loss 0.2989  elapsed 5.8s
+    step 150/351  loss 0.2992  elapsed 8.5s
+    step 200/351  loss 0.2998  elapsed 11.5s
+    step 250/351  loss 0.3004  elapsed 14.2s
+    step 300/351  loss 0.2998  elapsed 16.8s
+    step 350/351  loss 0.3007  elapsed 19.5s
+    train_loss 0.3008  val_loss 0.9166  val_acc 74.08%  val_top5 93.52%  lr 0.00100  time 21.9s
+
+[epoch 29/30]
+    step 50/351  loss 0.2970  elapsed 3.5s
+    step 100/351  loss 0.2926  elapsed 6.5s
+    step 150/351  loss 0.2936  elapsed 9.5s
+    step 200/351  loss 0.2935  elapsed 14.0s
+    step 250/351  loss 0.2948  elapsed 19.3s
+    step 300/351  loss 0.2963  elapsed 24.8s
+    step 350/351  loss 0.2952  elapsed 30.3s
+    train_loss 0.2952  val_loss 0.9159  val_acc 73.94%  val_top5 93.40%  lr 0.00100  time 34.4s
+
+[epoch 30/30]
+    step 50/351  loss 0.2922  elapsed 6.1s
+    step 100/351  loss 0.2912  elapsed 11.7s
+    step 150/351  loss 0.2938  elapsed 16.4s
+    step 200/351  loss 0.2959  elapsed 21.3s
+    step 250/351  loss 0.2969  elapsed 26.7s
+    step 300/351  loss 0.2954  elapsed 32.3s
+    step 350/351  loss 0.2965  elapsed 37.8s
+    train_loss 0.2964  val_loss 0.9150  val_acc 74.22%  val_top5 93.48%  lr 0.00010  time 41.5s
+[info] wrote epoch log: results/logs/r18_scratch_sgd_step.csv
+
+[info] loading best checkpoint for test evaluation: checkpoints/r18_scratch_sgd_step_best.pth
+[test] loss 3.4779  top1 16.19%  top5 42.38%
+[info] wrote test report: results/logs/r18_scratch_sgd_step_test_report.txt
+[info] appended row to results/results.csv
+[info] wrote plot: results/plots/r18_scratch_sgd_step_curves.png
+[done]
+
+==================================================================
+  RUN: r18_pretrained_sgd_step
+  model=resnet18 pretrained=1 optimizer=sgd scheduler=step lr=0.01 epochs=30
+==================================================================
+[info] device: cuda
+[info] run_name: r18_pretrained_sgd_step
+[info] args: {
+  "model": "resnet18",
+  "batch_size": 128,
+  "lr": 0.01,
+  "epochs": 30,
+  "optimizer": "sgd",
+  "scheduler": "step",
+  "pretrained": 1,
+  "save_csv": "results/results.csv",
+  "weight_decay": 0.0005,
+  "num_workers": 4,
+  "seed": 42,
+  "save_dir": "checkpoints",
+  "data_dir": "./data",
+  "run_name": "r18_pretrained_sgd_step",
+  "val_size": 5000,
+  "log_dir": "results/logs",
+  "plot_dir": "results/plots"
+}
+[info] train batches: 351  val batches: 40  test batches: 79
+Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /home/work/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+  0%|          | 0.00/44.7M [00:00<?, ?B/s] 13%|█▎        | 5.62M/44.7M [00:00<00:00, 59.0MB/s] 25%|██▌       | 11.2M/44.7M [00:01<00:04, 8.34MB/s] 31%|███       | 13.9M/44.7M [00:01<00:03, 9.06MB/s] 36%|███▌      | 15.9M/44.7M [00:01<00:03, 8.58MB/s] 39%|███▉      | 17.4M/44.7M [00:02<00:03, 7.82MB/s] 67%|██████▋   | 30.1M/44.7M [00:02<00:00, 23.5MB/s] 79%|███████▉  | 35.2M/44.7M [00:03<00:01, 9.63MB/s] 87%|████████▋ | 38.9M/44.7M [00:03<00:00, 10.4MB/s] 93%|█████████▎| 41.8M/44.7M [00:03<00:00, 11.0MB/s]100%|██████████| 44.7M/44.7M [00:04<00:00, 11.7MB/s]
+[info] trainable params: 11,227,812
+
+[epoch 1/30]
+/home/work/kds/AI_Assignment3/train.py:67: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /opt/pytorch/pytorch/aten/src/ATen/native/Scalar.cpp:22.)
+  loss_meter.update(loss.item(), images.size(0))
+    step 50/351  loss 3.8883  elapsed 7.5s
+    step 100/351  loss 3.0249  elapsed 13.0s
+    step 150/351  loss 2.5404  elapsed 17.6s
+    step 200/351  loss 2.2429  elapsed 22.3s
+    step 250/351  loss 2.0435  elapsed 27.8s
+    step 300/351  loss 1.8900  elapsed 33.2s
+    step 350/351  loss 1.7739  elapsed 38.4s
+    train_loss 1.7721  val_loss 0.9581  val_acc 71.88%  val_top5 93.82%  lr 0.01000  time 42.5s
+    [+] new best val_acc 71.88% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 2/30]
+    step 50/351  loss 0.9366  elapsed 6.3s
+    step 100/351  loss 0.9222  elapsed 11.8s
+    step 150/351  loss 0.9139  elapsed 16.2s
+    step 200/351  loss 0.9119  elapsed 21.2s
+    step 250/351  loss 0.9101  elapsed 26.5s
+    step 300/351  loss 0.9046  elapsed 31.9s
+    step 350/351  loss 0.8991  elapsed 37.2s
+    train_loss 0.8996  val_loss 0.8803  val_acc 73.04%  val_top5 94.88%  lr 0.01000  time 41.0s
+    [+] new best val_acc 73.04% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 3/30]
+    step 50/351  loss 0.7007  elapsed 6.4s
+    step 100/351  loss 0.7046  elapsed 11.7s
+    step 150/351  loss 0.7004  elapsed 16.4s
+    step 200/351  loss 0.7005  elapsed 21.7s
+    step 250/351  loss 0.7066  elapsed 26.9s
+    step 300/351  loss 0.7078  elapsed 32.3s
+    step 350/351  loss 0.7081  elapsed 37.7s
+    train_loss 0.7084  val_loss 0.8059  val_acc 74.66%  val_top5 95.86%  lr 0.01000  time 41.5s
+    [+] new best val_acc 74.66% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 4/30]
+    step 50/351  loss 0.5885  elapsed 6.3s
+    step 100/351  loss 0.5854  elapsed 11.6s
+    step 150/351  loss 0.5950  elapsed 16.4s
+    step 200/351  loss 0.5976  elapsed 21.1s
+    step 250/351  loss 0.5982  elapsed 26.7s
+    step 300/351  loss 0.6006  elapsed 32.2s
+    step 350/351  loss 0.5994  elapsed 37.6s
+    train_loss 0.5994  val_loss 0.7415  val_acc 77.74%  val_top5 96.10%  lr 0.01000  time 41.6s
+    [+] new best val_acc 77.74% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 5/30]
+    step 50/351  loss 0.4704  elapsed 6.2s
+    step 100/351  loss 0.4777  elapsed 11.5s
+    step 150/351  loss 0.4864  elapsed 16.1s
+    step 200/351  loss 0.4943  elapsed 21.1s
+    step 250/351  loss 0.5002  elapsed 26.2s
+    step 300/351  loss 0.5068  elapsed 31.5s
+    step 350/351  loss 0.5138  elapsed 37.0s
+    train_loss 0.5139  val_loss 0.7712  val_acc 76.74%  val_top5 95.82%  lr 0.01000  time 41.0s
+
+[epoch 6/30]
+    step 50/351  loss 0.4127  elapsed 6.2s
+    step 100/351  loss 0.4292  elapsed 11.8s
+    step 150/351  loss 0.4365  elapsed 16.5s
+    step 200/351  loss 0.4370  elapsed 21.2s
+    step 250/351  loss 0.4415  elapsed 26.9s
+    step 300/351  loss 0.4448  elapsed 32.3s
+    step 350/351  loss 0.4482  elapsed 37.7s
+    train_loss 0.4486  val_loss 0.7409  val_acc 78.36%  val_top5 95.96%  lr 0.01000  time 42.0s
+    [+] new best val_acc 78.36% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 7/30]
+    step 50/351  loss 0.3718  elapsed 6.1s
+    step 100/351  loss 0.3683  elapsed 11.6s
+    step 150/351  loss 0.3701  elapsed 16.1s
+    step 200/351  loss 0.3730  elapsed 21.2s
+    step 250/351  loss 0.3767  elapsed 26.6s
+    step 300/351  loss 0.3850  elapsed 32.0s
+    step 350/351  loss 0.3930  elapsed 37.4s
+    train_loss 0.3933  val_loss 0.7778  val_acc 77.20%  val_top5 95.94%  lr 0.01000  time 41.2s
+
+[epoch 8/30]
+    step 50/351  loss 0.3395  elapsed 6.3s
+    step 100/351  loss 0.3364  elapsed 11.8s
+    step 150/351  loss 0.3404  elapsed 16.4s
+    step 200/351  loss 0.3449  elapsed 21.6s
+    step 250/351  loss 0.3446  elapsed 26.9s
+    step 300/351  loss 0.3512  elapsed 32.3s
+    step 350/351  loss 0.3547  elapsed 37.8s
+    train_loss 0.3548  val_loss 0.7596  val_acc 78.14%  val_top5 95.94%  lr 0.01000  time 41.8s
+
+[epoch 9/30]
+    step 50/351  loss 0.2825  elapsed 6.2s
+    step 100/351  loss 0.2810  elapsed 11.7s
+    step 150/351  loss 0.2883  elapsed 16.5s
+    step 200/351  loss 0.2998  elapsed 21.3s
+    step 250/351  loss 0.3053  elapsed 26.7s
+    step 300/351  loss 0.3097  elapsed 32.1s
+    step 350/351  loss 0.3167  elapsed 37.6s
+    train_loss 0.3170  val_loss 0.7563  val_acc 78.80%  val_top5 96.10%  lr 0.01000  time 41.6s
+    [+] new best val_acc 78.80% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 10/30]
+    step 50/351  loss 0.2666  elapsed 6.3s
+    step 100/351  loss 0.2623  elapsed 11.8s
+    step 150/351  loss 0.2666  elapsed 16.4s
+    step 200/351  loss 0.2722  elapsed 21.4s
+    step 250/351  loss 0.2784  elapsed 26.9s
+    step 300/351  loss 0.2846  elapsed 32.4s
+    step 350/351  loss 0.2895  elapsed 37.8s
+    train_loss 0.2898  val_loss 0.7942  val_acc 77.36%  val_top5 95.80%  lr 0.00100  time 41.8s
+
+[epoch 11/30]
+    step 50/351  loss 0.2191  elapsed 6.0s
+    step 100/351  loss 0.2086  elapsed 11.5s
+    step 150/351  loss 0.2002  elapsed 15.9s
+    step 200/351  loss 0.1959  elapsed 21.6s
+    step 250/351  loss 0.1910  elapsed 27.0s
+    step 300/351  loss 0.1878  elapsed 32.5s
+    step 350/351  loss 0.1847  elapsed 38.0s
+    train_loss 0.1845  val_loss 0.5934  val_acc 82.78%  val_top5 97.32%  lr 0.00100  time 42.0s
+    [+] new best val_acc 82.78% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 12/30]
+    step 50/351  loss 0.1548  elapsed 6.2s
+    step 100/351  loss 0.1544  elapsed 11.3s
+    step 150/351  loss 0.1510  elapsed 16.3s
+    step 200/351  loss 0.1468  elapsed 21.8s
+    step 250/351  loss 0.1461  elapsed 27.2s
+    step 300/351  loss 0.1466  elapsed 32.6s
+    step 350/351  loss 0.1471  elapsed 38.1s
+    train_loss 0.1471  val_loss 0.5786  val_acc 82.84%  val_top5 97.24%  lr 0.00100  time 42.1s
+    [+] new best val_acc 82.84% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 13/30]
+    step 50/351  loss 0.1436  elapsed 6.2s
+    step 100/351  loss 0.1410  elapsed 10.8s
+    step 150/351  loss 0.1428  elapsed 15.6s
+    step 200/351  loss 0.1412  elapsed 21.0s
+    step 250/351  loss 0.1416  elapsed 26.3s
+    step 300/351  loss 0.1404  elapsed 31.8s
+    step 350/351  loss 0.1384  elapsed 37.1s
+    train_loss 0.1385  val_loss 0.5755  val_acc 83.14%  val_top5 97.40%  lr 0.00100  time 41.2s
+    [+] new best val_acc 83.14% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 14/30]
+    step 50/351  loss 0.1252  elapsed 5.9s
+    step 100/351  loss 0.1268  elapsed 10.8s
+    step 150/351  loss 0.1258  elapsed 15.9s
+    step 200/351  loss 0.1248  elapsed 21.5s
+    step 250/351  loss 0.1251  elapsed 26.6s
+    step 300/351  loss 0.1251  elapsed 32.1s
+    step 350/351  loss 0.1248  elapsed 37.6s
+    train_loss 0.1250  val_loss 0.5723  val_acc 83.30%  val_top5 97.44%  lr 0.00100  time 41.5s
+    [+] new best val_acc 83.30% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 15/30]
+    step 50/351  loss 0.1154  elapsed 6.2s
+    step 100/351  loss 0.1188  elapsed 11.0s
+    step 150/351  loss 0.1195  elapsed 16.1s
+    step 200/351  loss 0.1201  elapsed 21.4s
+    step 250/351  loss 0.1196  elapsed 26.8s
+    step 300/351  loss 0.1200  elapsed 32.2s
+    step 350/351  loss 0.1200  elapsed 37.6s
+    train_loss 0.1202  val_loss 0.5700  val_acc 83.40%  val_top5 97.52%  lr 0.00100  time 41.3s
+    [+] new best val_acc 83.40% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 16/30]
+    step 50/351  loss 0.1182  elapsed 6.4s
+    step 100/351  loss 0.1186  elapsed 11.1s
+    step 150/351  loss 0.1159  elapsed 16.4s
+    step 200/351  loss 0.1181  elapsed 22.3s
+    step 250/351  loss 0.1183  elapsed 27.9s
+    step 300/351  loss 0.1169  elapsed 33.2s
+    step 350/351  loss 0.1164  elapsed 38.7s
+    train_loss 0.1163  val_loss 0.5708  val_acc 83.40%  val_top5 97.32%  lr 0.00100  time 42.8s
+
+[epoch 17/30]
+    step 50/351  loss 0.1035  elapsed 6.2s
+    step 100/351  loss 0.1140  elapsed 10.7s
+    step 150/351  loss 0.1113  elapsed 16.2s
+    step 200/351  loss 0.1114  elapsed 21.7s
+    step 250/351  loss 0.1132  elapsed 27.1s
+    step 300/351  loss 0.1144  elapsed 32.6s
+    step 350/351  loss 0.1147  elapsed 38.2s
+    train_loss 0.1146  val_loss 0.5715  val_acc 83.28%  val_top5 97.44%  lr 0.00100  time 42.2s
+
+[epoch 18/30]
+    step 50/351  loss 0.1071  elapsed 5.9s
+    step 100/351  loss 0.1057  elapsed 10.1s
+    step 150/351  loss 0.1080  elapsed 15.6s
+    step 200/351  loss 0.1074  elapsed 20.9s
+    step 250/351  loss 0.1075  elapsed 26.2s
+    step 300/351  loss 0.1092  elapsed 32.0s
+    step 350/351  loss 0.1089  elapsed 37.5s
+    train_loss 0.1089  val_loss 0.5707  val_acc 83.12%  val_top5 97.52%  lr 0.00100  time 41.4s
+
+[epoch 19/30]
+    step 50/351  loss 0.1113  elapsed 6.1s
+    step 100/351  loss 0.1125  elapsed 10.5s
+    step 150/351  loss 0.1099  elapsed 15.8s
+    step 200/351  loss 0.1083  elapsed 21.1s
+    step 250/351  loss 0.1092  elapsed 26.4s
+    step 300/351  loss 0.1099  elapsed 31.9s
+    step 350/351  loss 0.1099  elapsed 37.3s
+    train_loss 0.1098  val_loss 0.5688  val_acc 83.20%  val_top5 97.44%  lr 0.00100  time 41.1s
+
+[epoch 20/30]
+    step 50/351  loss 0.0932  elapsed 6.0s
+    step 100/351  loss 0.0986  elapsed 10.6s
+    step 150/351  loss 0.0994  elapsed 15.5s
+    step 200/351  loss 0.0983  elapsed 20.6s
+    step 250/351  loss 0.0991  elapsed 25.8s
+    step 300/351  loss 0.1000  elapsed 31.3s
+    step 350/351  loss 0.0998  elapsed 36.7s
+    train_loss 0.0997  val_loss 0.5680  val_acc 83.34%  val_top5 97.46%  lr 0.00010  time 40.7s
+
+[epoch 21/30]
+    step 50/351  loss 0.1001  elapsed 6.2s
+    step 100/351  loss 0.1005  elapsed 10.8s
+    step 150/351  loss 0.1008  elapsed 16.1s
+    step 200/351  loss 0.1005  elapsed 21.6s
+    step 250/351  loss 0.0997  elapsed 26.9s
+    step 300/351  loss 0.1001  elapsed 32.6s
+    step 350/351  loss 0.0981  elapsed 38.1s
+    train_loss 0.0980  val_loss 0.5691  val_acc 83.32%  val_top5 97.42%  lr 0.00010  time 42.2s
+
+[epoch 22/30]
+    step 50/351  loss 0.0908  elapsed 6.1s
+    step 100/351  loss 0.0936  elapsed 10.5s
+    step 150/351  loss 0.0959  elapsed 15.6s
+    step 200/351  loss 0.0967  elapsed 21.1s
+    step 250/351  loss 0.0968  elapsed 26.5s
+    step 300/351  loss 0.0963  elapsed 31.8s
+    step 350/351  loss 0.0966  elapsed 37.3s
+    train_loss 0.0966  val_loss 0.5672  val_acc 83.28%  val_top5 97.42%  lr 0.00010  time 41.1s
+
+[epoch 23/30]
+    step 50/351  loss 0.0996  elapsed 6.5s
+    step 100/351  loss 0.0992  elapsed 11.2s
+    step 150/351  loss 0.0962  elapsed 16.4s
+    step 200/351  loss 0.0957  elapsed 22.0s
+    step 250/351  loss 0.0948  elapsed 27.3s
+    step 300/351  loss 0.0951  elapsed 32.6s
+    step 350/351  loss 0.0948  elapsed 38.1s
+    train_loss 0.0948  val_loss 0.5717  val_acc 83.30%  val_top5 97.48%  lr 0.00010  time 41.9s
+
+[epoch 24/30]
+    step 50/351  loss 0.0986  elapsed 6.2s
+    step 100/351  loss 0.0954  elapsed 10.9s
+    step 150/351  loss 0.0965  elapsed 15.7s
+    step 200/351  loss 0.0957  elapsed 21.2s
+    step 250/351  loss 0.0967  elapsed 26.8s
+    step 300/351  loss 0.0973  elapsed 32.1s
+    step 350/351  loss 0.0966  elapsed 37.6s
+    train_loss 0.0967  val_loss 0.5682  val_acc 83.34%  val_top5 97.42%  lr 0.00010  time 41.5s
+
+[epoch 25/30]
+    step 50/351  loss 0.0927  elapsed 6.2s
+    step 100/351  loss 0.0950  elapsed 10.9s
+    step 150/351  loss 0.0972  elapsed 16.0s
+    step 200/351  loss 0.0966  elapsed 21.4s
+    step 250/351  loss 0.0961  elapsed 27.0s
+    step 300/351  loss 0.0961  elapsed 32.4s
+    step 350/351  loss 0.0959  elapsed 37.7s
+    train_loss 0.0959  val_loss 0.5671  val_acc 83.38%  val_top5 97.54%  lr 0.00010  time 41.6s
+
+[epoch 26/30]
+    step 50/351  loss 0.0875  elapsed 5.9s
+    step 100/351  loss 0.0910  elapsed 11.0s
+    step 150/351  loss 0.0900  elapsed 15.9s
+    step 200/351  loss 0.0926  elapsed 21.4s
+    step 250/351  loss 0.0918  elapsed 26.8s
+    step 300/351  loss 0.0927  elapsed 32.2s
+    step 350/351  loss 0.0936  elapsed 37.7s
+    train_loss 0.0935  val_loss 0.5682  val_acc 83.30%  val_top5 97.38%  lr 0.00010  time 41.3s
+
+[epoch 27/30]
+    step 50/351  loss 0.0890  elapsed 6.2s
+    step 100/351  loss 0.0900  elapsed 10.9s
+    step 150/351  loss 0.0886  elapsed 16.1s
+    step 200/351  loss 0.0895  elapsed 21.4s
+    step 250/351  loss 0.0906  elapsed 26.6s
+    step 300/351  loss 0.0920  elapsed 32.0s
+    step 350/351  loss 0.0931  elapsed 37.2s
+    train_loss 0.0932  val_loss 0.5669  val_acc 83.50%  val_top5 97.48%  lr 0.00010  time 41.1s
+    [+] new best val_acc 83.50% -> saved checkpoints/r18_pretrained_sgd_step_best.pth
+
+[epoch 28/30]
+    step 50/351  loss 0.0877  elapsed 6.3s
+    step 100/351  loss 0.0933  elapsed 11.0s
+    step 150/351  loss 0.0927  elapsed 16.3s
+    step 200/351  loss 0.0930  elapsed 21.8s
+    step 250/351  loss 0.0924  elapsed 27.1s
+    step 300/351  loss 0.0919  elapsed 32.4s
+    step 350/351  loss 0.0924  elapsed 37.7s
+    train_loss 0.0925  val_loss 0.5676  val_acc 83.30%  val_top5 97.44%  lr 0.00010  time 41.5s
+
+[epoch 29/30]
+    step 50/351  loss 0.1026  elapsed 6.3s
+    step 100/351  loss 0.0978  elapsed 11.0s
+    step 150/351  loss 0.0956  elapsed 15.7s
+    step 200/351  loss 0.0946  elapsed 21.2s
+    step 250/351  loss 0.0934  elapsed 26.5s
+    step 300/351  loss 0.0942  elapsed 31.8s
+    step 350/351  loss 0.0927  elapsed 37.4s
+    train_loss 0.0926  val_loss 0.5677  val_acc 83.38%  val_top5 97.44%  lr 0.00010  time 41.2s
+
+[epoch 30/30]
+    step 50/351  loss 0.0959  elapsed 6.1s
+    step 100/351  loss 0.0918  elapsed 11.1s
+    step 150/351  loss 0.0907  elapsed 16.3s
+    step 200/351  loss 0.0925  elapsed 21.5s
+    step 250/351  loss 0.0918  elapsed 26.9s
+    step 300/351  loss 0.0912  elapsed 32.3s
+    step 350/351  loss 0.0920  elapsed 37.8s
+    train_loss 0.0919  val_loss 0.5656  val_acc 83.40%  val_top5 97.44%  lr 0.00001  time 41.6s
+[info] wrote epoch log: results/logs/r18_pretrained_sgd_step.csv
+
+[info] loading best checkpoint for test evaluation: checkpoints/r18_pretrained_sgd_step_best.pth
+[test] loss 0.5864  top1 83.47%  top5 97.24%
+[info] wrote test report: results/logs/r18_pretrained_sgd_step_test_report.txt
+[info] appended row to results/results.csv
+[info] wrote plot: results/plots/r18_pretrained_sgd_step_curves.png
+[done]
+
+==================================================================
+  RUN: r18_scratch_adam_cosine
+  model=resnet18 pretrained=0 optimizer=adam scheduler=cosine lr=0.001 epochs=30
+==================================================================
+[info] device: cuda
+[info] run_name: r18_scratch_adam_cosine
+[info] args: {
+  "model": "resnet18",
+  "batch_size": 128,
+  "lr": 0.001,
+  "epochs": 30,
+  "optimizer": "adam",
+  "scheduler": "cosine",
+  "pretrained": 0,
+  "save_csv": "results/results.csv",
+  "weight_decay": 0.0005,
+  "num_workers": 4,
+  "seed": 42,
+  "save_dir": "checkpoints",
+  "data_dir": "./data",
+  "run_name": "r18_scratch_adam_cosine",
+  "val_size": 5000,
+  "log_dir": "results/logs",
+  "plot_dir": "results/plots"
+}
+[info] train batches: 351  val batches: 40  test batches: 79
+[info] trainable params: 11,227,812
+
+[epoch 1/30]
+/home/work/kds/AI_Assignment3/train.py:67: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /opt/pytorch/pytorch/aten/src/ATen/native/Scalar.cpp:22.)
+  loss_meter.update(loss.item(), images.size(0))
+    step 50/351  loss 4.3288  elapsed 7.9s
+    step 100/351  loss 4.1727  elapsed 13.2s
+    step 150/351  loss 4.0816  elapsed 18.6s
+    step 200/351  loss 4.0213  elapsed 23.3s
+    step 250/351  loss 3.9700  elapsed 28.1s
+    step 300/351  loss 3.9204  elapsed 33.4s
+    step 350/351  loss 3.8734  elapsed 38.8s
+    train_loss 3.8726  val_loss 3.6231  val_acc 15.00%  val_top5 38.94%  lr 0.00100  time 42.8s
+    [+] new best val_acc 15.00% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 2/30]
+    step 50/351  loss 3.5307  elapsed 6.2s
+    step 100/351  loss 3.4960  elapsed 11.7s
+    step 150/351  loss 3.4771  elapsed 17.1s
+    step 200/351  loss 3.4423  elapsed 21.8s
+    step 250/351  loss 3.4047  elapsed 26.6s
+    step 300/351  loss 3.3735  elapsed 32.2s
+    step 350/351  loss 3.3413  elapsed 37.3s
+    train_loss 3.3412  val_loss 3.4306  val_acc 18.00%  val_top5 44.38%  lr 0.00099  time 41.0s
+    [+] new best val_acc 18.00% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 3/30]
+    step 50/351  loss 3.0450  elapsed 6.1s
+    step 100/351  loss 3.0103  elapsed 11.4s
+    step 150/351  loss 2.9787  elapsed 16.8s
+    step 200/351  loss 2.9359  elapsed 22.0s
+    step 250/351  loss 2.9122  elapsed 26.1s
+    step 300/351  loss 2.8830  elapsed 31.5s
+    step 350/351  loss 2.8540  elapsed 36.9s
+    train_loss 2.8535  val_loss 2.8197  val_acc 28.68%  val_top5 60.48%  lr 0.00098  time 40.7s
+    [+] new best val_acc 28.68% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 4/30]
+    step 50/351  loss 2.6145  elapsed 6.0s
+    step 100/351  loss 2.5997  elapsed 11.5s
+    step 150/351  loss 2.5812  elapsed 17.1s
+    step 200/351  loss 2.5655  elapsed 22.5s
+    step 250/351  loss 2.5398  elapsed 27.0s
+    step 300/351  loss 2.5258  elapsed 32.2s
+    step 350/351  loss 2.5015  elapsed 37.5s
+    train_loss 2.5007  val_loss 2.6083  val_acc 32.10%  val_top5 65.64%  lr 0.00096  time 41.3s
+    [+] new best val_acc 32.10% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 5/30]
+    step 50/351  loss 2.2948  elapsed 6.4s
+    step 100/351  loss 2.2846  elapsed 12.1s
+    step 150/351  loss 2.2801  elapsed 17.7s
+    step 200/351  loss 2.2718  elapsed 22.8s
+    step 250/351  loss 2.2658  elapsed 27.6s
+    step 300/351  loss 2.2516  elapsed 33.0s
+    step 350/351  loss 2.2440  elapsed 38.5s
+    train_loss 2.2442  val_loss 2.4106  val_acc 38.26%  val_top5 69.26%  lr 0.00093  time 42.6s
+    [+] new best val_acc 38.26% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 6/30]
+    step 50/351  loss 2.0719  elapsed 6.1s
+    step 100/351  loss 2.0710  elapsed 11.5s
+    step 150/351  loss 2.0637  elapsed 16.8s
+    step 200/351  loss 2.0678  elapsed 21.8s
+    step 250/351  loss 2.0611  elapsed 25.9s
+    step 300/351  loss 2.0529  elapsed 31.4s
+    step 350/351  loss 2.0442  elapsed 36.8s
+    train_loss 2.0452  val_loss 2.2671  val_acc 40.18%  val_top5 72.40%  lr 0.00090  time 40.8s
+    [+] new best val_acc 40.18% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 7/30]
+    step 50/351  loss 1.8890  elapsed 6.4s
+    step 100/351  loss 1.8885  elapsed 11.9s
+    step 150/351  loss 1.8926  elapsed 17.3s
+    step 200/351  loss 1.8911  elapsed 22.5s
+    step 250/351  loss 1.8905  elapsed 26.8s
+    step 300/351  loss 1.8867  elapsed 32.2s
+    step 350/351  loss 1.8806  elapsed 37.6s
+    train_loss 1.8808  val_loss 1.9710  val_acc 46.32%  val_top5 78.52%  lr 0.00087  time 41.5s
+    [+] new best val_acc 46.32% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 8/30]
+    step 50/351  loss 1.7948  elapsed 6.2s
+    step 100/351  loss 1.7674  elapsed 11.5s
+    step 150/351  loss 1.7663  elapsed 16.7s
+    step 200/351  loss 1.7681  elapsed 22.2s
+    step 250/351  loss 1.7594  elapsed 26.5s
+    step 300/351  loss 1.7525  elapsed 31.9s
+    step 350/351  loss 1.7527  elapsed 37.4s
+    train_loss 1.7527  val_loss 1.8744  val_acc 48.40%  val_top5 80.10%  lr 0.00083  time 41.2s
+    [+] new best val_acc 48.40% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 9/30]
+    step 50/351  loss 1.6327  elapsed 6.1s
+    step 100/351  loss 1.6197  elapsed 11.6s
+    step 150/351  loss 1.6314  elapsed 16.9s
+    step 200/351  loss 1.6371  elapsed 22.3s
+    step 250/351  loss 1.6451  elapsed 26.7s
+    step 300/351  loss 1.6384  elapsed 32.1s
+    step 350/351  loss 1.6424  elapsed 37.5s
+    train_loss 1.6430  val_loss 1.7757  val_acc 51.18%  val_top5 82.26%  lr 0.00079  time 41.5s
+    [+] new best val_acc 51.18% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 10/30]
+    step 50/351  loss 1.4978  elapsed 5.9s
+    step 100/351  loss 1.5163  elapsed 11.4s
+    step 150/351  loss 1.5145  elapsed 16.9s
+    step 200/351  loss 1.5267  elapsed 22.2s
+    step 250/351  loss 1.5317  elapsed 26.4s
+    step 300/351  loss 1.5397  elapsed 31.3s
+    step 350/351  loss 1.5408  elapsed 36.8s
+    train_loss 1.5413  val_loss 1.6748  val_acc 53.06%  val_top5 83.76%  lr 0.00075  time 41.0s
+    [+] new best val_acc 53.06% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 11/30]
+    step 50/351  loss 1.4244  elapsed 5.9s
+    step 100/351  loss 1.4249  elapsed 11.2s
+    step 150/351  loss 1.4366  elapsed 16.6s
+    step 200/351  loss 1.4397  elapsed 22.0s
+    step 250/351  loss 1.4466  elapsed 26.5s
+    step 300/351  loss 1.4465  elapsed 31.4s
+    step 350/351  loss 1.4505  elapsed 36.9s
+    train_loss 1.4501  val_loss 1.6183  val_acc 55.00%  val_top5 84.54%  lr 0.00070  time 40.9s
+    [+] new best val_acc 55.00% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 12/30]
+    step 50/351  loss 1.3264  elapsed 6.7s
+    step 100/351  loss 1.3379  elapsed 12.2s
+    step 150/351  loss 1.3518  elapsed 17.4s
+    step 200/351  loss 1.3483  elapsed 22.9s
+    step 250/351  loss 1.3501  elapsed 27.5s
+    step 300/351  loss 1.3485  elapsed 32.2s
+    step 350/351  loss 1.3559  elapsed 37.6s
+    train_loss 1.3558  val_loss 1.6202  val_acc 54.64%  val_top5 84.94%  lr 0.00065  time 41.6s
+
+[epoch 13/30]
+    step 50/351  loss 1.2227  elapsed 6.4s
+    step 100/351  loss 1.2583  elapsed 11.8s
+    step 150/351  loss 1.2693  elapsed 17.2s
+    step 200/351  loss 1.2758  elapsed 22.6s
+    step 250/351  loss 1.2884  elapsed 27.1s
+    step 300/351  loss 1.2930  elapsed 32.0s
+    step 350/351  loss 1.2930  elapsed 37.7s
+    train_loss 1.2931  val_loss 1.4816  val_acc 58.40%  val_top5 87.24%  lr 0.00060  time 41.8s
+    [+] new best val_acc 58.40% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 14/30]
+    step 50/351  loss 1.1638  elapsed 6.3s
+    step 100/351  loss 1.1855  elapsed 11.5s
+    step 150/351  loss 1.1904  elapsed 16.7s
+    step 200/351  loss 1.1991  elapsed 22.1s
+    step 250/351  loss 1.2073  elapsed 26.5s
+    step 300/351  loss 1.2117  elapsed 31.5s
+    step 350/351  loss 1.2142  elapsed 36.9s
+    train_loss 1.2146  val_loss 1.4472  val_acc 59.16%  val_top5 86.92%  lr 0.00055  time 41.0s
+    [+] new best val_acc 59.16% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 15/30]
+    step 50/351  loss 1.1091  elapsed 6.1s
+    step 100/351  loss 1.1227  elapsed 11.6s
+    step 150/351  loss 1.1195  elapsed 17.1s
+    step 200/351  loss 1.1242  elapsed 22.4s
+    step 250/351  loss 1.1297  elapsed 26.8s
+    step 300/351  loss 1.1368  elapsed 32.2s
+    step 350/351  loss 1.1402  elapsed 37.5s
+    train_loss 1.1408  val_loss 1.3324  val_acc 62.62%  val_top5 88.70%  lr 0.00050  time 41.5s
+    [+] new best val_acc 62.62% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 16/30]
+    step 50/351  loss 1.0440  elapsed 6.1s
+    step 100/351  loss 1.0412  elapsed 11.6s
+    step 150/351  loss 1.0498  elapsed 17.1s
+    step 200/351  loss 1.0642  elapsed 22.4s
+    step 250/351  loss 1.0737  elapsed 26.6s
+    step 300/351  loss 1.0783  elapsed 32.1s
+    step 350/351  loss 1.0791  elapsed 37.6s
+    train_loss 1.0795  val_loss 1.2745  val_acc 64.90%  val_top5 89.58%  lr 0.00045  time 41.5s
+    [+] new best val_acc 64.90% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 17/30]
+    step 50/351  loss 0.9662  elapsed 6.3s
+    step 100/351  loss 0.9798  elapsed 11.8s
+    step 150/351  loss 0.9889  elapsed 17.2s
+    step 200/351  loss 0.9877  elapsed 22.4s
+    step 250/351  loss 0.9938  elapsed 26.6s
+    step 300/351  loss 0.9959  elapsed 32.0s
+    step 350/351  loss 1.0007  elapsed 37.3s
+    train_loss 1.0009  val_loss 1.3148  val_acc 63.38%  val_top5 88.96%  lr 0.00040  time 41.2s
+
+[epoch 18/30]
+    step 50/351  loss 0.9127  elapsed 6.1s
+    step 100/351  loss 0.9101  elapsed 11.5s
+    step 150/351  loss 0.9155  elapsed 17.0s
+    step 200/351  loss 0.9181  elapsed 22.7s
+    step 250/351  loss 0.9223  elapsed 27.1s
+    step 300/351  loss 0.9280  elapsed 32.0s
+    step 350/351  loss 0.9289  elapsed 37.3s
+    train_loss 0.9292  val_loss 1.2710  val_acc 64.22%  val_top5 89.78%  lr 0.00035  time 41.1s
+
+[epoch 19/30]
+    step 50/351  loss 0.8442  elapsed 6.0s
+    step 100/351  loss 0.8468  elapsed 11.4s
+    step 150/351  loss 0.8404  elapsed 16.8s
+    step 200/351  loss 0.8427  elapsed 22.5s
+    step 250/351  loss 0.8482  elapsed 27.0s
+    step 300/351  loss 0.8568  elapsed 31.9s
+    step 350/351  loss 0.8584  elapsed 37.4s
+    train_loss 0.8587  val_loss 1.1433  val_acc 67.80%  val_top5 90.66%  lr 0.00030  time 41.3s
+    [+] new best val_acc 67.80% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 20/30]
+    step 50/351  loss 0.7410  elapsed 5.9s
+    step 100/351  loss 0.7638  elapsed 11.4s
+    step 150/351  loss 0.7684  elapsed 16.9s
+    step 200/351  loss 0.7747  elapsed 22.3s
+    step 250/351  loss 0.7800  elapsed 26.9s
+    step 300/351  loss 0.7847  elapsed 31.5s
+    step 350/351  loss 0.7893  elapsed 37.0s
+    train_loss 0.7891  val_loss 1.1647  val_acc 67.02%  val_top5 90.96%  lr 0.00025  time 40.7s
+
+[epoch 21/30]
+    step 50/351  loss 0.7072  elapsed 6.4s
+    step 100/351  loss 0.7107  elapsed 11.6s
+    step 150/351  loss 0.7149  elapsed 17.2s
+    step 200/351  loss 0.7226  elapsed 22.7s
+    step 250/351  loss 0.7223  elapsed 27.7s
+    step 300/351  loss 0.7271  elapsed 33.0s
+    step 350/351  loss 0.7270  elapsed 38.5s
+    train_loss 0.7270  val_loss 1.1173  val_acc 68.46%  val_top5 91.24%  lr 0.00021  time 42.3s
+    [+] new best val_acc 68.46% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 22/30]
+    step 50/351  loss 0.6416  elapsed 6.5s
+    step 100/351  loss 0.6482  elapsed 11.8s
+    step 150/351  loss 0.6483  elapsed 17.2s
+    step 200/351  loss 0.6470  elapsed 22.6s
+    step 250/351  loss 0.6509  elapsed 27.1s
+    step 300/351  loss 0.6521  elapsed 32.1s
+    step 350/351  loss 0.6563  elapsed 37.3s
+    train_loss 0.6563  val_loss 1.0802  val_acc 68.88%  val_top5 91.94%  lr 0.00017  time 41.2s
+    [+] new best val_acc 68.88% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 23/30]
+    step 50/351  loss 0.5757  elapsed 6.3s
+    step 100/351  loss 0.5807  elapsed 11.7s
+    step 150/351  loss 0.5749  elapsed 17.1s
+    step 200/351  loss 0.5767  elapsed 22.6s
+    step 250/351  loss 0.5804  elapsed 27.2s
+    step 300/351  loss 0.5854  elapsed 31.8s
+    step 350/351  loss 0.5871  elapsed 37.2s
+    train_loss 0.5869  val_loss 1.0585  val_acc 70.14%  val_top5 92.48%  lr 0.00013  time 41.1s
+    [+] new best val_acc 70.14% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 24/30]
+    step 50/351  loss 0.5076  elapsed 6.2s
+    step 100/351  loss 0.5090  elapsed 11.7s
+    step 150/351  loss 0.5111  elapsed 17.1s
+    step 200/351  loss 0.5127  elapsed 22.5s
+    step 250/351  loss 0.5189  elapsed 27.1s
+    step 300/351  loss 0.5207  elapsed 32.2s
+    step 350/351  loss 0.5243  elapsed 37.5s
+    train_loss 0.5245  val_loss 1.0143  val_acc 71.56%  val_top5 92.98%  lr 0.00010  time 41.7s
+    [+] new best val_acc 71.56% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 25/30]
+    step 50/351  loss 0.4792  elapsed 6.3s
+    step 100/351  loss 0.4721  elapsed 12.0s
+    step 150/351  loss 0.4681  elapsed 17.4s
+    step 200/351  loss 0.4716  elapsed 22.4s
+    step 250/351  loss 0.4736  elapsed 27.3s
+    step 300/351  loss 0.4735  elapsed 32.5s
+    step 350/351  loss 0.4709  elapsed 38.0s
+    train_loss 0.4708  val_loss 1.0051  val_acc 72.00%  val_top5 92.76%  lr 0.00007  time 41.9s
+    [+] new best val_acc 72.00% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 26/30]
+    step 50/351  loss 0.4138  elapsed 6.1s
+    step 100/351  loss 0.4147  elapsed 11.6s
+    step 150/351  loss 0.4173  elapsed 17.0s
+    step 200/351  loss 0.4222  elapsed 22.1s
+    step 250/351  loss 0.4224  elapsed 26.9s
+    step 300/351  loss 0.4238  elapsed 32.0s
+    step 350/351  loss 0.4247  elapsed 37.5s
+    train_loss 0.4245  val_loss 0.9927  val_acc 71.98%  val_top5 92.86%  lr 0.00004  time 41.7s
+
+[epoch 27/30]
+    step 50/351  loss 0.3865  elapsed 6.3s
+    step 100/351  loss 0.3819  elapsed 11.8s
+    step 150/351  loss 0.3838  elapsed 17.1s
+    step 200/351  loss 0.3887  elapsed 21.9s
+    step 250/351  loss 0.3854  elapsed 26.4s
+    step 300/351  loss 0.3884  elapsed 31.9s
+    step 350/351  loss 0.3913  elapsed 37.1s
+    train_loss 0.3915  val_loss 0.9756  val_acc 72.80%  val_top5 93.04%  lr 0.00002  time 41.1s
+    [+] new best val_acc 72.80% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 28/30]
+    step 50/351  loss 0.3553  elapsed 6.2s
+    step 100/351  loss 0.3636  elapsed 11.6s
+    step 150/351  loss 0.3634  elapsed 17.1s
+    step 200/351  loss 0.3616  elapsed 22.2s
+    step 250/351  loss 0.3604  elapsed 27.0s
+    step 300/351  loss 0.3590  elapsed 32.5s
+    step 350/351  loss 0.3594  elapsed 38.0s
+    train_loss 0.3594  val_loss 0.9620  val_acc 73.24%  val_top5 93.16%  lr 0.00001  time 41.9s
+    [+] new best val_acc 73.24% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+
+[epoch 29/30]
+    step 50/351  loss 0.3452  elapsed 5.9s
+    step 100/351  loss 0.3418  elapsed 11.4s
+    step 150/351  loss 0.3447  elapsed 16.6s
+    step 200/351  loss 0.3456  elapsed 21.5s
+    step 250/351  loss 0.3461  elapsed 25.9s
+    step 300/351  loss 0.3472  elapsed 31.1s
+    step 350/351  loss 0.3459  elapsed 36.8s
+    train_loss 0.3459  val_loss 0.9591  val_acc 73.12%  val_top5 93.16%  lr 0.00000  time 40.6s
+
+[epoch 30/30]
+    step 50/351  loss 0.3376  elapsed 6.1s
+    step 100/351  loss 0.3347  elapsed 11.5s
+    step 150/351  loss 0.3344  elapsed 17.0s
+    step 200/351  loss 0.3361  elapsed 22.0s
+    step 250/351  loss 0.3377  elapsed 26.6s
+    step 300/351  loss 0.3376  elapsed 32.0s
+    step 350/351  loss 0.3388  elapsed 37.3s
+    train_loss 0.3386  val_loss 0.9540  val_acc 73.56%  val_top5 93.16%  lr 0.00000  time 41.3s
+    [+] new best val_acc 73.56% -> saved checkpoints/r18_scratch_adam_cosine_best.pth
+[info] wrote epoch log: results/logs/r18_scratch_adam_cosine.csv
+
+[info] loading best checkpoint for test evaluation: checkpoints/r18_scratch_adam_cosine_best.pth
+[test] loss 0.9446  top1 73.43%  top5 93.32%
+[info] wrote test report: results/logs/r18_scratch_adam_cosine_test_report.txt
+[info] appended row to results/results.csv
+[info] wrote plot: results/plots/r18_scratch_adam_cosine_curves.png
+[done]
+
+==================================================================
+  RUN: r18_pretrained_adam_cosine
+  model=resnet18 pretrained=1 optimizer=adam scheduler=cosine lr=0.001 epochs=30
+==================================================================
+[info] device: cuda
+[info] run_name: r18_pretrained_adam_cosine
+[info] args: {
+  "model": "resnet18",
+  "batch_size": 128,
+  "lr": 0.001,
+  "epochs": 30,
+  "optimizer": "adam",
+  "scheduler": "cosine",
+  "pretrained": 1,
+  "save_csv": "results/results.csv",
+  "weight_decay": 0.0005,
+  "num_workers": 4,
+  "seed": 42,
+  "save_dir": "checkpoints",
+  "data_dir": "./data",
+  "run_name": "r18_pretrained_adam_cosine",
+  "val_size": 5000,
+  "log_dir": "results/logs",
+  "plot_dir": "results/plots"
+}
+[info] train batches: 351  val batches: 40  test batches: 79
+[info] trainable params: 11,227,812
+
+[epoch 1/30]
+/home/work/kds/AI_Assignment3/train.py:67: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /opt/pytorch/pytorch/aten/src/ATen/native/Scalar.cpp:22.)
+  loss_meter.update(loss.item(), images.size(0))
+    step 50/351  loss 3.2121  elapsed 7.4s
+    step 100/351  loss 2.7121  elapsed 12.6s
+    step 150/351  loss 2.4675  elapsed 18.0s
+    step 200/351  loss 2.3094  elapsed 23.6s
+    step 250/351  loss 2.1996  elapsed 28.8s
+    step 300/351  loss 2.1100  elapsed 33.6s
+    step 350/351  loss 2.0428  elapsed 38.7s
+    train_loss 2.0419  val_loss 1.9128  val_acc 49.34%  val_top5 80.26%  lr 0.00100  time 42.9s
+    [+] new best val_acc 49.34% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 2/30]
+    step 50/351  loss 1.4761  elapsed 6.1s
+    step 100/351  loss 1.4736  elapsed 11.5s
+    step 150/351  loss 1.4623  elapsed 16.9s
+    step 200/351  loss 1.4626  elapsed 22.3s
+    step 250/351  loss 1.4574  elapsed 27.7s
+    step 300/351  loss 1.4530  elapsed 32.1s
+    step 350/351  loss 1.4483  elapsed 37.3s
+    train_loss 1.4488  val_loss 1.5798  val_acc 56.42%  val_top5 85.76%  lr 0.00099  time 41.4s
+    [+] new best val_acc 56.42% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 3/30]
+    step 50/351  loss 1.2908  elapsed 6.1s
+    step 100/351  loss 1.2920  elapsed 11.4s
+    step 150/351  loss 1.2975  elapsed 16.9s
+    step 200/351  loss 1.2917  elapsed 22.2s
+    step 250/351  loss 1.2960  elapsed 27.7s
+    step 300/351  loss 1.2972  elapsed 32.0s
+    step 350/351  loss 1.2970  elapsed 37.0s
+    train_loss 1.2969  val_loss 1.4027  val_acc 60.58%  val_top5 87.90%  lr 0.00098  time 41.3s
+    [+] new best val_acc 60.58% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 4/30]
+    step 50/351  loss 1.1246  elapsed 6.1s
+    step 100/351  loss 1.1551  elapsed 11.6s
+    step 150/351  loss 1.1773  elapsed 17.0s
+    step 200/351  loss 1.1896  elapsed 22.2s
+    step 250/351  loss 1.1961  elapsed 27.5s
+    step 300/351  loss 1.2010  elapsed 31.9s
+    step 350/351  loss 1.2013  elapsed 37.1s
+    train_loss 1.2011  val_loss 1.3282  val_acc 61.80%  val_top5 89.24%  lr 0.00096  time 40.9s
+    [+] new best val_acc 61.80% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 5/30]
+    step 50/351  loss 1.0753  elapsed 6.0s
+    step 100/351  loss 1.0738  elapsed 11.4s
+    step 150/351  loss 1.0958  elapsed 17.0s
+    step 200/351  loss 1.1092  elapsed 22.4s
+    step 250/351  loss 1.1176  elapsed 27.9s
+    step 300/351  loss 1.1320  elapsed 32.2s
+    step 350/351  loss 1.1404  elapsed 37.0s
+    train_loss 1.1408  val_loss 1.3206  val_acc 62.54%  val_top5 88.82%  lr 0.00093  time 41.0s
+    [+] new best val_acc 62.54% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 6/30]
+    step 50/351  loss 1.0266  elapsed 6.4s
+    step 100/351  loss 1.0295  elapsed 11.8s
+    step 150/351  loss 1.0534  elapsed 17.4s
+    step 200/351  loss 1.0676  elapsed 22.9s
+    step 250/351  loss 1.0714  elapsed 28.2s
+    step 300/351  loss 1.0798  elapsed 32.4s
+    step 350/351  loss 1.0854  elapsed 37.8s
+    train_loss 1.0869  val_loss 1.2220  val_acc 65.00%  val_top5 90.34%  lr 0.00090  time 41.6s
+    [+] new best val_acc 65.00% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 7/30]
+    step 50/351  loss 0.9689  elapsed 6.1s
+    step 100/351  loss 0.9760  elapsed 11.4s
+    step 150/351  loss 0.9811  elapsed 17.1s
+    step 200/351  loss 0.9949  elapsed 22.6s
+    step 250/351  loss 1.0134  elapsed 27.8s
+    step 300/351  loss 1.0233  elapsed 32.1s
+    step 350/351  loss 1.0301  elapsed 37.5s
+    train_loss 1.0303  val_loss 1.2536  val_acc 63.42%  val_top5 90.50%  lr 0.00087  time 41.4s
+
+[epoch 8/30]
+    step 50/351  loss 0.9267  elapsed 6.1s
+    step 100/351  loss 0.9363  elapsed 11.4s
+    step 150/351  loss 0.9535  elapsed 17.1s
+    step 200/351  loss 0.9654  elapsed 22.4s
+    step 250/351  loss 0.9711  elapsed 28.0s
+    step 300/351  loss 0.9815  elapsed 32.3s
+    step 350/351  loss 0.9904  elapsed 37.4s
+    train_loss 0.9902  val_loss 1.2054  val_acc 65.30%  val_top5 91.02%  lr 0.00083  time 41.3s
+    [+] new best val_acc 65.30% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 9/30]
+    step 50/351  loss 0.8848  elapsed 6.4s
+    step 100/351  loss 0.8750  elapsed 11.6s
+    step 150/351  loss 0.8850  elapsed 17.3s
+    step 200/351  loss 0.9142  elapsed 22.9s
+    step 250/351  loss 0.9286  elapsed 28.1s
+    step 300/351  loss 0.9342  elapsed 32.7s
+    step 350/351  loss 0.9441  elapsed 38.0s
+    train_loss 0.9447  val_loss 1.2708  val_acc 64.54%  val_top5 89.98%  lr 0.00079  time 41.9s
+
+[epoch 10/30]
+    step 50/351  loss 0.8343  elapsed 5.7s
+    step 100/351  loss 0.8379  elapsed 11.3s
+    step 150/351  loss 0.8480  elapsed 16.8s
+    step 200/351  loss 0.8655  elapsed 22.3s
+    step 250/351  loss 0.8776  elapsed 27.5s
+    step 300/351  loss 0.8896  elapsed 31.8s
+    step 350/351  loss 0.8956  elapsed 37.3s
+    train_loss 0.8963  val_loss 1.1413  val_acc 67.64%  val_top5 91.52%  lr 0.00075  time 41.2s
+    [+] new best val_acc 67.64% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 11/30]
+    step 50/351  loss 0.7759  elapsed 6.0s
+    step 100/351  loss 0.7812  elapsed 11.6s
+    step 150/351  loss 0.7979  elapsed 17.1s
+    step 200/351  loss 0.8060  elapsed 22.3s
+    step 250/351  loss 0.8149  elapsed 27.5s
+    step 300/351  loss 0.8270  elapsed 31.6s
+    step 350/351  loss 0.8362  elapsed 37.2s
+    train_loss 0.8364  val_loss 1.0883  val_acc 69.52%  val_top5 91.82%  lr 0.00070  time 40.9s
+    [+] new best val_acc 69.52% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 12/30]
+    step 50/351  loss 0.7267  elapsed 6.0s
+    step 100/351  loss 0.7403  elapsed 11.3s
+    step 150/351  loss 0.7585  elapsed 16.6s
+    step 200/351  loss 0.7635  elapsed 21.9s
+    step 250/351  loss 0.7725  elapsed 27.1s
+    step 300/351  loss 0.7785  elapsed 31.5s
+    step 350/351  loss 0.7861  elapsed 37.0s
+    train_loss 0.7863  val_loss 1.1673  val_acc 66.68%  val_top5 90.56%  lr 0.00065  time 40.8s
+
+[epoch 13/30]
+    step 50/351  loss 0.6834  elapsed 6.0s
+    step 100/351  loss 0.6910  elapsed 11.6s
+    step 150/351  loss 0.7002  elapsed 17.2s
+    step 200/351  loss 0.7106  elapsed 22.6s
+    step 250/351  loss 0.7269  elapsed 27.9s
+    step 300/351  loss 0.7358  elapsed 32.3s
+    step 350/351  loss 0.7436  elapsed 37.9s
+    train_loss 0.7438  val_loss 1.0477  val_acc 69.40%  val_top5 92.54%  lr 0.00060  time 41.8s
+
+[epoch 14/30]
+    step 50/351  loss 0.6223  elapsed 6.1s
+    step 100/351  loss 0.6276  elapsed 11.7s
+    step 150/351  loss 0.6377  elapsed 17.2s
+    step 200/351  loss 0.6438  elapsed 22.7s
+    step 250/351  loss 0.6608  elapsed 27.8s
+    step 300/351  loss 0.6713  elapsed 32.1s
+    step 350/351  loss 0.6781  elapsed 37.7s
+    train_loss 0.6781  val_loss 1.0421  val_acc 70.12%  val_top5 92.42%  lr 0.00055  time 41.8s
+    [+] new best val_acc 70.12% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 15/30]
+    step 50/351  loss 0.5862  elapsed 6.3s
+    step 100/351  loss 0.5946  elapsed 11.7s
+    step 150/351  loss 0.6022  elapsed 16.8s
+    step 200/351  loss 0.6108  elapsed 22.1s
+    step 250/351  loss 0.6189  elapsed 27.3s
+    step 300/351  loss 0.6289  elapsed 31.6s
+    step 350/351  loss 0.6377  elapsed 37.0s
+    train_loss 0.6386  val_loss 1.0613  val_acc 69.98%  val_top5 92.94%  lr 0.00050  time 41.1s
+
+[epoch 16/30]
+    step 50/351  loss 0.5388  elapsed 6.1s
+    step 100/351  loss 0.5378  elapsed 11.6s
+    step 150/351  loss 0.5455  elapsed 17.0s
+    step 200/351  loss 0.5564  elapsed 22.4s
+    step 250/351  loss 0.5642  elapsed 27.5s
+    step 300/351  loss 0.5695  elapsed 31.8s
+    step 350/351  loss 0.5770  elapsed 37.4s
+    train_loss 0.5773  val_loss 1.0132  val_acc 71.68%  val_top5 93.60%  lr 0.00045  time 41.5s
+    [+] new best val_acc 71.68% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 17/30]
+    step 50/351  loss 0.4782  elapsed 6.1s
+    step 100/351  loss 0.4898  elapsed 11.4s
+    step 150/351  loss 0.4919  elapsed 16.9s
+    step 200/351  loss 0.4960  elapsed 22.3s
+    step 250/351  loss 0.5048  elapsed 27.3s
+    step 300/351  loss 0.5114  elapsed 31.8s
+    step 350/351  loss 0.5187  elapsed 37.2s
+    train_loss 0.5193  val_loss 0.9807  val_acc 72.08%  val_top5 93.92%  lr 0.00040  time 41.2s
+    [+] new best val_acc 72.08% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 18/30]
+    step 50/351  loss 0.4350  elapsed 6.4s
+    step 100/351  loss 0.4401  elapsed 11.7s
+    step 150/351  loss 0.4492  elapsed 17.2s
+    step 200/351  loss 0.4513  elapsed 22.8s
+    step 250/351  loss 0.4517  elapsed 27.6s
+    step 300/351  loss 0.4578  elapsed 32.3s
+    step 350/351  loss 0.4609  elapsed 37.6s
+    train_loss 0.4612  val_loss 0.9355  val_acc 73.50%  val_top5 94.18%  lr 0.00035  time 41.8s
+    [+] new best val_acc 73.50% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 19/30]
+    step 50/351  loss 0.4114  elapsed 6.0s
+    step 100/351  loss 0.4049  elapsed 11.4s
+    step 150/351  loss 0.3986  elapsed 16.7s
+    step 200/351  loss 0.3979  elapsed 22.1s
+    step 250/351  loss 0.4012  elapsed 27.1s
+    step 300/351  loss 0.4079  elapsed 31.2s
+    step 350/351  loss 0.4137  elapsed 36.9s
+    train_loss 0.4140  val_loss 0.8786  val_acc 75.56%  val_top5 94.56%  lr 0.00030  time 41.1s
+    [+] new best val_acc 75.56% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 20/30]
+    step 50/351  loss 0.3240  elapsed 5.9s
+    step 100/351  loss 0.3340  elapsed 11.2s
+    step 150/351  loss 0.3347  elapsed 16.4s
+    step 200/351  loss 0.3374  elapsed 21.8s
+    step 250/351  loss 0.3432  elapsed 27.2s
+    step 300/351  loss 0.3481  elapsed 31.3s
+    step 350/351  loss 0.3529  elapsed 36.5s
+    train_loss 0.3526  val_loss 0.8662  val_acc 76.16%  val_top5 94.54%  lr 0.00025  time 40.1s
+    [+] new best val_acc 76.16% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 21/30]
+    step 50/351  loss 0.3021  elapsed 6.2s
+    step 100/351  loss 0.2978  elapsed 11.5s
+    step 150/351  loss 0.2973  elapsed 16.9s
+    step 200/351  loss 0.2998  elapsed 22.4s
+    step 250/351  loss 0.2993  elapsed 27.8s
+    step 300/351  loss 0.3030  elapsed 32.2s
+    step 350/351  loss 0.3041  elapsed 37.2s
+    train_loss 0.3042  val_loss 0.8552  val_acc 76.18%  val_top5 95.08%  lr 0.00021  time 41.0s
+    [+] new best val_acc 76.18% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 22/30]
+    step 50/351  loss 0.2525  elapsed 6.0s
+    step 100/351  loss 0.2514  elapsed 11.7s
+    step 150/351  loss 0.2516  elapsed 17.1s
+    step 200/351  loss 0.2513  elapsed 22.5s
+    step 250/351  loss 0.2545  elapsed 28.0s
+    step 300/351  loss 0.2546  elapsed 32.4s
+    step 350/351  loss 0.2555  elapsed 37.4s
+    train_loss 0.2555  val_loss 0.8547  val_acc 77.30%  val_top5 94.88%  lr 0.00017  time 41.4s
+    [+] new best val_acc 77.30% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 23/30]
+    step 50/351  loss 0.2116  elapsed 6.2s
+    step 100/351  loss 0.2128  elapsed 11.7s
+    step 150/351  loss 0.2085  elapsed 17.0s
+    step 200/351  loss 0.2082  elapsed 22.6s
+    step 250/351  loss 0.2085  elapsed 27.9s
+    step 300/351  loss 0.2121  elapsed 32.7s
+    step 350/351  loss 0.2145  elapsed 37.7s
+    train_loss 0.2144  val_loss 0.8036  val_acc 77.88%  val_top5 95.52%  lr 0.00013  time 41.5s
+    [+] new best val_acc 77.88% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 24/30]
+    step 50/351  loss 0.1813  elapsed 6.3s
+    step 100/351  loss 0.1782  elapsed 11.6s
+    step 150/351  loss 0.1775  elapsed 17.2s
+    step 200/351  loss 0.1791  elapsed 22.7s
+    step 250/351  loss 0.1826  elapsed 28.1s
+    step 300/351  loss 0.1835  elapsed 32.6s
+    step 350/351  loss 0.1841  elapsed 37.8s
+    train_loss 0.1843  val_loss 0.8057  val_acc 78.18%  val_top5 95.52%  lr 0.00010  time 41.8s
+    [+] new best val_acc 78.18% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 25/30]
+    step 50/351  loss 0.1579  elapsed 6.0s
+    step 100/351  loss 0.1571  elapsed 11.3s
+    step 150/351  loss 0.1553  elapsed 16.8s
+    step 200/351  loss 0.1566  elapsed 22.3s
+    step 250/351  loss 0.1572  elapsed 27.9s
+    step 300/351  loss 0.1571  elapsed 32.5s
+    step 350/351  loss 0.1569  elapsed 37.9s
+    train_loss 0.1569  val_loss 0.7867  val_acc 78.64%  val_top5 95.74%  lr 0.00007  time 41.6s
+    [+] new best val_acc 78.64% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 26/30]
+    step 50/351  loss 0.1288  elapsed 6.1s
+    step 100/351  loss 0.1308  elapsed 11.5s
+    step 150/351  loss 0.1305  elapsed 17.0s
+    step 200/351  loss 0.1324  elapsed 22.5s
+    step 250/351  loss 0.1320  elapsed 27.9s
+    step 300/351  loss 0.1334  elapsed 32.5s
+    step 350/351  loss 0.1353  elapsed 37.9s
+    train_loss 0.1353  val_loss 0.7870  val_acc 78.32%  val_top5 95.66%  lr 0.00004  time 42.0s
+
+[epoch 27/30]
+    step 50/351  loss 0.1218  elapsed 6.2s
+    step 100/351  loss 0.1201  elapsed 11.4s
+    step 150/351  loss 0.1180  elapsed 16.7s
+    step 200/351  loss 0.1178  elapsed 22.0s
+    step 250/351  loss 0.1186  elapsed 27.4s
+    step 300/351  loss 0.1197  elapsed 32.0s
+    step 350/351  loss 0.1208  elapsed 36.9s
+    train_loss 0.1209  val_loss 0.7716  val_acc 78.94%  val_top5 95.84%  lr 0.00002  time 41.5s
+    [+] new best val_acc 78.94% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 28/30]
+    step 50/351  loss 0.1014  elapsed 6.3s
+    step 100/351  loss 0.1076  elapsed 11.7s
+    step 150/351  loss 0.1086  elapsed 17.4s
+    step 200/351  loss 0.1117  elapsed 22.6s
+    step 250/351  loss 0.1111  elapsed 28.0s
+    step 300/351  loss 0.1095  elapsed 32.7s
+    step 350/351  loss 0.1089  elapsed 37.7s
+    train_loss 0.1090  val_loss 0.7600  val_acc 78.94%  val_top5 95.84%  lr 0.00001  time 41.9s
+
+[epoch 29/30]
+    step 50/351  loss 0.1137  elapsed 6.3s
+    step 100/351  loss 0.1058  elapsed 11.9s
+    step 150/351  loss 0.1051  elapsed 17.5s
+    step 200/351  loss 0.1041  elapsed 23.1s
+    step 250/351  loss 0.1036  elapsed 28.6s
+    step 300/351  loss 0.1054  elapsed 33.2s
+    step 350/351  loss 0.1042  elapsed 38.5s
+    train_loss 0.1041  val_loss 0.7616  val_acc 79.24%  val_top5 95.90%  lr 0.00000  time 42.3s
+    [+] new best val_acc 79.24% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+
+[epoch 30/30]
+    step 50/351  loss 0.1008  elapsed 6.2s
+    step 100/351  loss 0.1010  elapsed 11.8s
+    step 150/351  loss 0.1022  elapsed 17.3s
+    step 200/351  loss 0.1030  elapsed 22.7s
+    step 250/351  loss 0.1027  elapsed 28.4s
+    step 300/351  loss 0.1022  elapsed 32.8s
+    step 350/351  loss 0.1023  elapsed 38.0s
+    train_loss 0.1023  val_loss 0.7588  val_acc 79.38%  val_top5 95.92%  lr 0.00000  time 42.2s
+    [+] new best val_acc 79.38% -> saved checkpoints/r18_pretrained_adam_cosine_best.pth
+[info] wrote epoch log: results/logs/r18_pretrained_adam_cosine.csv
+
+[info] loading best checkpoint for test evaluation: checkpoints/r18_pretrained_adam_cosine_best.pth
+[test] loss 0.7844  top1 79.28%  top5 95.39%
+[info] wrote test report: results/logs/r18_pretrained_adam_cosine_test_report.txt
+[info] appended row to results/results.csv
+[info] wrote plot: results/plots/r18_pretrained_adam_cosine_curves.png
+[done]
+
+All runs complete. Aggregate results: results/results.csv
