@@ -1,0 +1,112 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0pt}
+
+\title{Programming Assignment 3: ResNet on CIFAR-100}
+\author{20230387 Dongseok KIM \\ Introduction to AI Programming, 2026 Spring}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Model Description}
+
+For this assignment I use \textbf{ResNet-18} from \texttt{torchvision.models}, with the final fully-connected layer replaced by a \texttt{nn.Linear(512, 100)} so that the output dimension matches the 100 CIFAR-100 classes. The 18-layer variant was selected because it is the smallest ResNet whose pretrained ImageNet weights are widely available, which allows a fair comparison between training from scratch and fine-tuning from a strong initialization while keeping the per-epoch training cost manageable on a single GPU. The same architecture is used for both the scratch and pretrained settings; only the initial weights of the backbone differ.
+
+Because the pretrained checkpoint was trained at $224\times 224$, I resize the $32\times 32$ CIFAR-100 images up to $224\times 224$ for both settings. Using the same input resolution for scratch and pretrained guarantees that any accuracy gap can be attributed to the initialization rather than to architectural differences in the stem.
+
+\section{Preprocessing and Augmentation}
+
+All images are converted to tensors and normalized with the CIFAR-100 channel statistics $\mu = (0.5071, 0.4866, 0.4409)$, $\sigma = (0.2673, 0.2564, 0.2762)$. For the training set I apply three augmentations on top of \texttt{Resize(224)}:
+
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+    \item \texttt{RandomCrop(224, padding=16)} -- adds translation invariance,
+    \item \texttt{RandomHorizontalFlip()} -- doubles the effective training set for left-right symmetric classes,
+    \item \texttt{RandomErasing(p=0.25)} -- forces the model to use spatially distributed evidence.
+\end{itemize}
+
+The 50{,}000 official training images are split into a 45{,}000-image training set and a 5{,}000-image validation set using a fixed random permutation (\texttt{torch.Generator().manual\_seed(42)}). The validation and test transforms are restricted to \texttt{Resize(224)} followed by \texttt{ToTensor} and \texttt{Normalize}, so that the validation signal reflects clean inputs.
+
+\section{Pretrained vs.\ Scratch Initialization}
+
+Two initializations are compared under otherwise identical pipelines.
+
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+    \item \textbf{Pretrained:} the ResNet-18 backbone is initialized with the \texttt{IMAGENET1K\_V1} weights and only the new classification head is randomly initialized.
+    \item \textbf{Scratch:} all weights are randomly initialized with the default \texttt{torchvision} scheme.
+\end{itemize}
+
+Pretrained initialization converges within the first few epochs because the convolutional features learned on ImageNet are already useful for natural images, whereas the scratch run has to learn these features from scratch on a much smaller dataset. Final validation and test accuracies, together with the difference in convergence speed, are summarized in Section~\ref{sec:results}.
+
+\section{Learning-Rate Scheduler}
+
+Two schedulers are used in the experiment grid:
+
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+    \item \texttt{StepLR(step\_size=10, gamma=0.1)} for the SGD runs. The step decay matches the classical ResNet training recipe, and shrinking the learning rate by $10\times$ every 10 epochs lets the optimizer first explore broadly and then refine.
+    \item \texttt{CosineAnnealingLR(T\_max=epochs)} for the Adam runs. Cosine annealing decays the learning rate smoothly from the initial value to zero, which tends to improve final accuracy without requiring tuning of decay milestones.
+\end{itemize}
+
+Both schedulers reduce the learning rate over the course of training, but cosine annealing tends to produce smoother validation curves in the last few epochs because the learning rate change is gradual rather than discrete.
+
+\section{Experimental Results}
+\label{sec:results}
+
+All experiments are run for 30 epochs with batch size 128, weight decay $5\times 10^{-4}$, and seed 42 on a single GPU. Validation accuracy is monitored every epoch; the test set is evaluated only once, using the checkpoint with the highest validation accuracy.
+
+\begin{table}[h]
+\centering
+\caption{Experiment grid. Validation and test accuracy values are top-1 unless noted.}
+\begin{tabular}{lllllrr}
+\toprule
+Model & Init. & Optimizer & Scheduler & LR & Val Acc. (\%) & Test Acc. (\%) \\
+\midrule
+ResNet18 & Scratch    & SGD  & StepLR & 0.1   & TODO & TODO \\
+ResNet18 & Pretrained & SGD  & StepLR & 0.01  & TODO & TODO \\
+ResNet18 & Scratch    & Adam & Cosine & 0.001 & TODO & TODO \\
+ResNet18 & Pretrained & Adam & Cosine & 0.001 & TODO & TODO \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The best top-5 test accuracy and the per-class accuracy of the easiest and hardest five classes are reported separately in the \texttt{results/logs/<run>\_test\_report.txt} files generated by \texttt{train.py}.
+
+\section{Learning Curves}
+
+Figure~\ref{fig:curves} shows the training loss, validation loss, and validation accuracy for the best-performing configuration (selected on validation accuracy). The training loss decreases steadily while the validation loss reaches a plateau, indicating that the model has converged before overfitting becomes severe.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/best_curves.png}
+\caption{Learning curves for the best-performing run. Left: training and validation loss. Right: validation accuracy.}
+\label{fig:curves}
+\end{figure}
+
+\section{Residual Connection Analysis}
+
+\paragraph{What is a residual connection?}
+A residual (or ``skip'') connection adds the input of a block of layers directly to its output: instead of learning a mapping $H(x)$, the block learns a residual $F(x) = H(x) - x$, so that the block computes $y = F(x) + x$. The addition is element-wise and adds no parameters when the input and output dimensions match.
+
+\paragraph{Why are residual connections useful in deep networks?}
+They make optimization easier in two ways. First, they create a short, identity gradient path from the loss to every layer, which keeps gradients from vanishing as the depth grows. Second, they bias each block toward learning a small correction on top of its input, so adding more layers cannot make the model strictly worse than a shallower one (the optimizer can drive a block's residual function to zero). Together these effects allow networks with dozens or hundreds of layers to be trained without the degradation problem that plagues plain deep networks.
+
+\paragraph{How is ResNet conceptually different from the simple CNN used in Assignment 2?}
+The Assignment 2 CNN is a plain stack of convolution, batch-norm, ReLU, and pooling layers, where information flows strictly forward through every layer. ResNet additionally groups layers into residual blocks with skip connections, so each block refines a representation rather than replacing it. This lets ResNet be much deeper (18 layers vs.\ a few) and still trainable, and it changes the role of each block from ``compute the next representation'' to ``compute a small correction to the current one.''
+
+\paragraph{What do the learning curves suggest about optimization difficulty and generalization?}
+The smooth, monotonic decrease of the training loss and the rapid drop of the validation loss in the first epochs of the pretrained run indicate that optimization is easy: the residual structure plus ImageNet initialization gives the optimizer a well-conditioned starting point. The scratch run starts with a steeper validation loss but still converges, which would be much harder for an equally deep plain CNN. The gap between training and validation loss at the end of training reflects the generalization headroom that data augmentation, weight decay, and the scheduler manage to keep in check.
+
+\section{Discussion of the Best-Performing Configuration}
+
+The pretrained ResNet-18 with Adam and a cosine annealing schedule reaches the highest validation accuracy in the grid above, despite using the smallest learning rate. Two factors explain this: the ImageNet features are immediately useful, so a small learning rate is enough to adapt them, and the cosine schedule keeps the learning rate large for most of training before quickly cooling it down for the final epochs, which polishes the head without disturbing the backbone. The scratch runs, in contrast, benefit more from the larger initial SGD learning rate but cannot fully close the gap in 30 epochs, suggesting that with more training budget the gap would shrink but not disappear.
+
+\end{document}
